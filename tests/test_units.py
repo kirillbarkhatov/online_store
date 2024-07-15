@@ -1,5 +1,6 @@
 from unittest.mock import mock_open, patch
-from src.utils import read_json, create_products_by_categories_from_dict
+
+from src.utils import create_products_by_categories_from_dict, read_json
 
 
 def test_read_json():
@@ -11,7 +12,10 @@ def test_read_json():
 def test_create_products_by_categories_from_dict(products_by_category_list_of_dict):
     categories_list = create_products_by_categories_from_dict(products_by_category_list_of_dict)
     assert categories_list[0].name == "Смартфоны"
-    assert categories_list[1].description == "Современный телевизор, который позволяет наслаждаться просмотром, станет вашим другом и помощником"
+    assert (
+        categories_list[1].description
+        == "Современный телевизор, который позволяет наслаждаться просмотром, станет вашим другом и помощником"
+    )
     assert categories_list[0].products[0].name == "Samsung Galaxy C23 Ultra"
     assert categories_list[0].products[1].description == "512GB, Gray space"
     assert categories_list[0].products[2].price == 31000.0
