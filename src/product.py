@@ -1,3 +1,6 @@
+from typing import Any
+
+
 class Product:
     name: str
     description: str
@@ -11,11 +14,11 @@ class Product:
         self.quantity = quantity
 
     @property
-    def price(self):
+    def price(self) -> float:
         return self.__price
 
     @price.setter
-    def price(self, price: float):
+    def price(self, price: float) -> None:
         if price <= 0:
             print("Цена не должна быть нулевая или отрицательная")
 
@@ -30,7 +33,7 @@ class Product:
             self.__price = price
 
     @classmethod
-    def new_product(cls, new_product: dict, products_list: list = None):
+    def new_product(cls, new_product: dict, products_list: list | None = None) -> Any:
         if products_list is None:
             return cls(**new_product)
         for product in products_list:

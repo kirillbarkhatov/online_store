@@ -1,4 +1,7 @@
+from typing import Any
+
 from src.product import Product
+
 
 class Category:
     name: str
@@ -15,16 +18,16 @@ class Category:
         Category.product_count += len(products)
 
     @property
-    def products(self):
+    def products(self) -> str:
         product_str = ""
         for product in self.__products:
             product_str += f"{product.name}, {product.price} руб. Остаток: {product.quantity} шт.\n"
         return product_str
 
     @property
-    def products_list(self):
+    def products_list(self) -> Any:
         return self.__products
 
-    def add_product(self, product: Product):
+    def add_product(self, product: Product) -> None:
         self.__products.append(product)
         Category.product_count += 1
