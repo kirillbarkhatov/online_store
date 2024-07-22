@@ -7,8 +7,9 @@ class Category:
     name: str
     description: str
     __products: list
-    category_count = 0
-    product_count = 0
+    category_count: int = 0
+    product_count: int = 0
+    total_products_quantity: int
 
     def __init__(self, name: str, description: str, products: list):
         self.name = name
