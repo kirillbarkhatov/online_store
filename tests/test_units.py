@@ -16,7 +16,7 @@ def test_create_products_by_categories_from_dict(products_by_category_list_of_di
         categories_list[1].description
         == "Современный телевизор, который позволяет наслаждаться просмотром, станет вашим другом и помощником"
     )
-    assert categories_list[0].products[0].name == "Samsung Galaxy C23 Ultra"
-    assert categories_list[0].products[1].description == "512GB, Gray space"
-    assert categories_list[0].products[2].price == 31000.0
-    assert categories_list[1].products[0].quantity == 7
+    assert categories_list[0].products_list[0].name == "Samsung Galaxy C23 Ultra"
+    assert categories_list[0].products_list[1].description == "512GB, Gray space"
+    assert categories_list[0].products_list[2].price == 31000.0
+    assert categories_list[1].products_list[0].quantity == 7
