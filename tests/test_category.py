@@ -15,3 +15,7 @@ Xiaomi Redmi Note 11, 31000.0 руб. Остаток: 14 шт.\n"""
     )
     category2.add_product(product4)
     assert category2.product_count == 5
+
+
+def test_category_str(category1):
+   assert str(category1) == "Смартфоны, количество продуктов: 27 шт."
