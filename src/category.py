@@ -18,7 +18,7 @@ class Category:
         Category.category_count += 1
         Category.product_count += len(products)
 
-    def __str__(self):
+    def __str__(self) -> str:
         self.total_products_quantity = 0
         for product in self.__products:
             self.total_products_quantity += product.quantity
