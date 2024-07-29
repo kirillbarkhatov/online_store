@@ -1,3 +1,6 @@
+import pytest
+
+
 def test_category(category1, category2, product4):
     assert category1.name == "Смартфоны"
     assert (
@@ -19,3 +22,8 @@ Xiaomi Redmi Note 11, 31000.0 руб. Остаток: 14 шт.\n"""
 
 def test_category_str(category1):
     assert str(category1) == "Смартфоны, количество продуктов: 27 шт."
+
+
+def test_category_add_product_error(category2):
+    with pytest.raises(TypeError):
+        assert category2.add_product("Это не продукт")
