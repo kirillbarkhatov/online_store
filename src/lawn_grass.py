@@ -20,7 +20,7 @@ class LawnGrass(Product):
         self.color = color
 
     def __add__(self, other: Any) -> Any:
-        if type(other) is LawnGrass.__class__:
-            return self.__price * self.quantity + other.__price * other.quantity
+        if type(other) is LawnGrass:
+            return self.price * self.quantity + other.price * other.quantity
         else:
             raise TypeError
