@@ -1,4 +1,5 @@
 from src.product import Product
+from typing import Any
 
 
 class Smartphone(Product):
@@ -20,3 +21,9 @@ class Smartphone(Product):
         self.model = model
         self.memory = memory
         self.color = color
+
+    def __add__(self, other: Any) -> Any:
+        if type(other) is Smartphone.__class__:
+            return self.__price * self.quantity + other.__price * other.quantity
+        else:
+            raise TypeError
