@@ -51,3 +51,7 @@ def test_product(capsys, product1, product2, product3, product4):
 
     assert new_product.quantity == 10
     assert new_product.price == 180000.0
+
+
+def test_product_add(product1, product2):
+    assert product1 + product2 == 2580000.0
