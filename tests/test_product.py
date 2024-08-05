@@ -2,6 +2,8 @@ from unittest.mock import patch
 
 from src.product import Product
 
+import pytest
+
 
 def test_product(capsys, product1, product2, product3, product4):
     assert product1.name == "Samsung Galaxy S23 Ultra"
@@ -55,3 +57,10 @@ def test_product(capsys, product1, product2, product3, product4):
 
 def test_product_add(product1, product2):
     assert product1 + product2 == 2580000.0
+
+
+def test_product_error():
+    with pytest.raises(ValueError, match="Товар с нулевым количеством не может быть добавлен"):
+        Product(
+            name="Samsung Galaxy S23 Ultra", description="256GB, Серый цвет, 200MP камера", price=180000.0, quantity=0
+        )
