@@ -1,8 +1,8 @@
 from unittest.mock import patch
 
-from src.product import Product
-
 import pytest
+
+from src.product import Product
 
 
 def test_product(capsys, product1, product2, product3, product4):

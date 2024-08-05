@@ -1,5 +1,5 @@
-from src.product import Product
 from src.exceptions import ZeroQuantityProduct
+from src.product import Product
 
 
 class Order:
@@ -25,7 +25,6 @@ class Order:
             print("Заказ успешно сформирован")
         finally:
             print("Обработка добавления товара в заказ завершена")
-
 
     def __str__(self) -> str:
         return f"Было приобретено: {self.product.name} - {self.buy_count} шт., на общую сумму {self.total_amount}"

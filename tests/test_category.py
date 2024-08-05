@@ -1,5 +1,4 @@
 import pytest
-from unittest.mock import patch
 
 
 def test_category(capsys, category1, category2, product4):
