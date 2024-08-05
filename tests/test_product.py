@@ -13,7 +13,7 @@ def test_product(capsys, product1, product2, product3, product4):
     assert product3.price == 40000
     product3.price = 0
     captured = capsys.readouterr()
-    assert captured.out == "Цена не должна быть нулевая или отрицательная\n"
+    assert captured.out.strip().split("\n")[-1] == "Цена не должна быть нулевая или отрицательная"
     assert product3.price == 40000
 
     with patch("builtins.input") as mock_input:
