@@ -1,6 +1,7 @@
 # Импорт встроенной библиотеки для работы веб-сервера
 from http.server import BaseHTTPRequestHandler, HTTPServer
 import time
+import cgi
 
 # Для начала определим настройки запуска
 hostName = "localhost" # Адрес для доступа по сети
@@ -36,6 +37,13 @@ class MyServer(BaseHTTPRequestHandler):
         with open(path) as file:
             content = file.read()
             self.wfile.write(bytes(content, "utf-8")) # Тело ответа
+
+    def do_POST(self):
+        content_length = int(self.headers['Content-Length'])
+        post_data = self.rfile.read(content_length)
+
+        response = f"Received POST data: {post_data.decode('utf-8')}"
+        print(response)
 
 if __name__ == "__main__":
     # Инициализация веб-сервера, который будет по заданным параметрах в сети
