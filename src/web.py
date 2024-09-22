@@ -1,7 +1,6 @@
 # Импорт встроенной библиотеки для работы веб-сервера
 from http.server import BaseHTTPRequestHandler, HTTPServer
 import time
-import cgi
 
 # Для начала определим настройки запуска
 hostName = "localhost" # Адрес для доступа по сети
